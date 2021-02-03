@@ -1,9 +1,21 @@
 sudo: required
+language: generic
 services:
     - docker
 
 before_install:
     - docker build -t aelkhalily/docker-react -f Dockerfile.dev .
 
+#testing using travis with docker container
 script:
-    - docker run aelkhalily/docker-react npm run test -- --coverage
+    - docker run -e CI=true aelkhalily/docker-react npm run test -- --coverage
+# deploying using travis to aws
+# Docerreact-env.eba-i37iithf.us-east-2.elasticbeanstalk.com
+# deploy:
+#     provider: "elasticbeanstalk"
+#     region: "us-east-2"
+#     app: "docker-react"
+#     bucket_name: ""
+#     bucket_path: ""
+#     on:
+#         branch: main
