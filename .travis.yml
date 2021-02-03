@@ -4,7 +4,7 @@ services:
     - docker
 
 before_install:
-    - docker build -t aelkhalily/docker-react .
+    - docker build -t aelkhalily/docker-react -f Dockerfile.dev .
 
 #testing using travis with docker container
 script:
@@ -12,7 +12,7 @@ script:
 # deploying using travis to aws
 deploy:
     skip_cleanup: true
-    provider: "elasticbeanstalk"
+    provider: elasticbeanstalk
     region: "us-east-2"
     app: "docker-react"
     env: "Docerreact-env"
@@ -21,5 +21,4 @@ deploy:
     on:
         branch: main
     access_key_id: $AWS_ACCESS_KEY_ID
-    Secret_access_key:
-        secure: $AWS_SECRET_KEY_ID
+    Secret_access_key: $AWS_SECRET_KEY_ID
