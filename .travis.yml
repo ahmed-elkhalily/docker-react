@@ -11,6 +11,7 @@ script:
     - docker run -e CI=true aelkhalily/docker-react npm run test -- --coverage
 # deploying using travis to aws
 deploy:
+    skip_cleanup: true
     provider: "elasticbeanstalk"
     region: "us-east-2"
     app: "docker-react"
