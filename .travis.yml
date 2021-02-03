@@ -11,11 +11,15 @@ script:
     - docker run -e CI=true aelkhalily/docker-react npm run test -- --coverage
 # deploying using travis to aws
 # Docerreact-env.eba-i37iithf.us-east-2.elasticbeanstalk.com
-# deploy:
-#     provider: "elasticbeanstalk"
-#     region: "us-east-2"
-#     app: "docker-react"
-#     bucket_name: ""
-#     bucket_path: ""
-#     on:
-#         branch: main
+# secret key: YYTtXui2OBmMla5K/XQzMCFplyZlj3/mFpIPBZxc
+# accessed key: AKIA3DYAIN6QYRHSHOBP
+# user : docker-react-git-travis-aws
+deploy:
+    provider: "elasticbeanstalk"
+    region: "us-east-2"
+    app: "docker-react"
+    env: "Docerreact-env"
+    bucket_name: "elasticbeanstalk-us-east-2-763967860641"
+    bucket_path: "docker-react"
+    on:
+        branch: main
