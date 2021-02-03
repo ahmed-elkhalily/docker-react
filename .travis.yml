@@ -13,10 +13,10 @@ deploy:
     skip_cleanup: true
     provider: elasticbeanstalk
     region: "us-east-2"
-    app: "docker-react"
+    app: "docer-react"
     env: "Docerreact-env"
     bucket_name: "elasticbeanstalk-us-east-2-763967860641"
-    bucket_path: "docker-react"
+    bucket_path: "docer-react"
     on:
         branch: main
     access_key_id: $AWS_ACCESS_KEY_ID
