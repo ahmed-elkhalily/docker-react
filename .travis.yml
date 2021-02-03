@@ -4,7 +4,7 @@ services:
     - docker
 
 before_install:
-    - docker build -t aelkhalily/docker-react -f Dockerfile.dev .
+    - docker build -t aelkhalily/docker-react .
 
 #testing using travis with docker container
 script:
